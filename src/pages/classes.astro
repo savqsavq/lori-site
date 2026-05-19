@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const classImages = [
+  "IMG_2865.JPG", "IMG_2866.JPG", "IMG_2867.JPG", "IMG_2868.JPG"
+];
+---
+
+<Layout title="Classes & Lessons">
+  <div class="page-header">
+    <h1>Classes & Lessons</h1>
+    <p>Drawing, painting, sculpting, and more for kids and adults of all skill levels.</p>
+  </div>
+
+  <div class="content">
+
+    <section class="camp">
+      <div class="section-text">
+        <h2>Summer Art Camp 2026</h2>
+        <p>Lori Rene is teaching summer art camp at Fat Cat Art Cafe in Flowood, MS. Kids will draw, paint, and sculpt in a fun, creative environment.</p>
+        <div class="schedule">
+          <div class="age-group">
+            <span class="age-label">Ages 7–9</span>
+            <span>9:00am – 11:00am</span>
+          </div>
+          <div class="age-group">
+            <span class="age-label">Ages 10–12</span>
+            <span>12:00pm – 2:00pm</span>
+          </div>
+        </div>
+        <div class="weeks">
+          <div class="week">Week 1 · June 8–12</div>
+          <div class="week">Week 2 · June 15–19</div>
+          <div class="week">Week 3 · June 22–26</div>
+        </div>
+        <a href="https://fatcatbooking.as.me/schedule/ecd40bb4/?categories[]=Lori%27s%20Art%20Camp" target="_blank" class="btn-primary">Register at FatCatArtCafe.com</a>
+        <p class="phone">Questions? Call Lori at <a href="tel:6017912388">601-791-2388</a> or the studio at <a href="tel:6019926553">601-992-6553</a></p>
+      </div>
+    </section>
+
+    <section class="private">
+      <h2>Private Lessons</h2>
+      <p>One-on-one instruction tailored to your goals, age, and skill level. Whether you're a complete beginner or looking to refine your technique, Lori works with students of all ages.</p>
+      <p>Contact Lori directly to schedule a private lesson.</p>
+      <a href="/contact" class="btn-secondary">Get in touch</a>
+    </section>
+
+    <section class="class-gallery">
+      <h2>From the Classroom</h2>
+      <div class="class-grid">
+        {classImages.map((img) => (
+          <div class="class-img">
+            <img src={`/images/classes/${img}`} alt="Art class with Lori Rene" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    text-align: center;
+    padding: 3rem 2rem 1rem;
+    background: var(--teal);
+    color: white;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--pink);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .schedule {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+
+  .age-group {
+    background: var(--teal);
+    color: white;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .age-label {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .weeks {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .week {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .phone {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .phone a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--pink);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--pink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--pink);
+    color: white;
+  }
+
+  .class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+  }
+
+  .class-img {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: #f0f0f0;
+  }
+
+  .class-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .class-img:hover img {
+    transform: scale(1.04);
+  }
+</style>

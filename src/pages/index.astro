@@ -1,11 +1,256 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Lori Rene</h1>
+      <p class="tagline">Artist · Art Educator · Studio Teacher</p>
+      <p class="bio">With nine years teaching over 1,000 kids at Madison Station Elementary, Lori Rene brings creativity, warmth, and expertise to every canvas. Now opening her own studio and gallery, teaching summer art camp at Fat Cat Art Cafe in Flowood.</p>
+      <div class="hero-buttons">
+        <a href="/classes" class="btn-primary">Summer Camp 2026</a>
+        <a href="/gallery" class="btn-secondary">View Gallery</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/images/lori-headshot.jpg" alt="Lori Rene" />
+    </div>
+  </section>
+
+  <section class="what-i-do">
+    <h2>What Lori Does</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">🎨</span>
+        <h3>Draw · Paint · Sculpt</h3>
+        <p>Fine art classes for kids and adults covering drawing, painting, and sculpture across all skill levels.</p>
+        <a href="/classes">Learn more →</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎂</span>
+        <h3>Birthday Parties</h3>
+        <p>Unforgettable art-themed birthday parties and face painting for kids of all ages.</p>
+        <a href="/parties">Learn more →</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🖼️</span>
+        <h3>Original Artwork</h3>
+        <p>Browse and purchase Lori's original paintings and prints.</p>
+        <a href="/gallery">View gallery →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="camp-banner">
+    <div class="camp-text">
+      <h2>Summer Art Camp 2026</h2>
+      <p>At Fat Cat Art Cafe · Flowood, MS</p>
+      <ul>
+        <li>Ages 7–9 · 9:00–11:00am</li>
+        <li>Ages 10–12 · 12:00–2:00pm</li>
+        <li>Week 1: June 8–12</li>
+        <li>Week 2: June 15–19</li>
+        <li>Week 3: June 22–26</li>
+      </ul>
+      <a href="https://fatcatbooking.as.me/schedule/ecd40bb4/?categories[]=Lori%27s%20Art%20Camp" target="_blank" class="btn-primary">Register at FatCatArtCafe.com</a>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-text h1 {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    color: var(--pink);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    flex: 1;
+    max-width: 420px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    border: 4px solid var(--teal);
+  }
+
+  .btn-primary {
+    background: var(--pink);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--pink);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--pink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--pink);
+    color: white;
+  }
+
+  .what-i-do {
+    background: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .what-i-do h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 2.5rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card {
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover { border-color: var(--teal); }
+
+  .card-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .card a {
+    color: var(--pink);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .camp-banner {
+    background: var(--teal);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .camp-text {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .camp-banner h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .camp-banner p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .camp-banner ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 1rem;
+  }
+
+  .camp-banner .btn-primary {
+    background: var(--pink);
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      padding: 2rem 1.25rem;
+      text-align: center;
+    }
+
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-buttons { justify-content: center; }
+    .hero-image { max-width: 100%; }
+    .bio { max-width: 100%; }
+  }
+</style>
