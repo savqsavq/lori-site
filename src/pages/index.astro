@@ -14,8 +14,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
     <div class="hero-image">
-      <img src="/images/lori-headshot.jpg" alt="Lori Rene" />
-    </div>
+        <img src="/images/lori-headshot.jpg" alt="Lori Rene" />
+      </div>
+  </section>
+
+  <section class="about">
+    <img src="/images/Lori rene bio 2.jpeg" alt="Lori Rene artist bio" />
   </section>
 
   <section class="what-i-do">
@@ -112,6 +116,17 @@ import Layout from '../layouts/Layout.astro';
     object-fit: cover;
     aspect-ratio: 4/5;
     border: 4px solid var(--teal);
+  }
+
+  .about {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 3rem 2rem 0;
+  }
+
+  .about img {
+    width: 100%;
+    border-radius: 12px;
   }
 
   .btn-primary {
