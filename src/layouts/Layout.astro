@@ -16,17 +16,38 @@ const { title = "Lori Renè" } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+    <meta property="og:title" content="Lori Renè · Artist & Art Educator" />
+    <meta property="og:description" content="Create Each Day with Lori Renè. Artist, art educator, and studio teacher based in the Greater Jackson area, MS." />
+    <meta property="og:image" content="https://lorirene.com/og-image.jpg" />
+    <meta property="og:url" content="https://lorirene.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://lorirene.com/og-image.jpg" />
   </head>
   <body>
     <nav>
       <a href="/" class="logo">LR</a>
-      <ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="nav-menu">
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/classes">Classes & Lessons</a></li>
         <li><a href="/parties">Parties & Events</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+    </script>
 
     <slot />
 
@@ -72,7 +93,7 @@ const { title = "Lori Renè" } = Astro.props;
     padding: 1.25rem 2rem;
     background: white;
     border-bottom: 2px solid var(--pink);
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 100;
   }
@@ -100,6 +121,8 @@ const { title = "Lori Renè" } = Astro.props;
     list-style: none;
     display: flex;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
   }
 
   nav ul a {
@@ -112,8 +135,62 @@ const { title = "Lori Renè" } = Astro.props;
     transition: color 0.2s;
   }
 
-  nav ul a:hover {
-    color: var(--pink);
+  nav ul a:hover { color: var(--pink); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      gap: 0;
+      border-bottom: 2px solid var(--pink);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    nav ul.open { display: flex; }
+
+    nav ul li a {
+      display: block;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
   }
 
   footer {
