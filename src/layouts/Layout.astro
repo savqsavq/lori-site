@@ -2,7 +2,7 @@
 interface Props {
   title?: string;
 }
-const { title = "Lori Rene" } = Astro.props;
+const { title = "Lori Renè" } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,14 +12,14 @@ const { title = "Lori Rene" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Lori Rene</title>
+    <title>{title} | Lori Renè</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&family=Caveat:wght@700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <nav>
-      <a href="/" class="logo">Lori Rene</a>
+      <a href="/" class="logo">LR</a>
       <ul>
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/classes">Classes & Lessons</a></li>
@@ -31,7 +31,7 @@ const { title = "Lori Rene" } = Astro.props;
     <slot />
 
     <footer>
-      <p>© 2026 Lori Rene · Greater Jackson Area, MS · <a href="mailto:LoriRene@gmail.com">LoriRene@gmail.com</a> · 601-791-2388</p>
+      <p>© 2026 Lori Renè · Greater Jackson Area, MS · <a href="mailto:LoriRene@gmail.com">LoriRene@gmail.com</a> · 601-791-2388</p>
       <div class="socials">
         <a href="https://instagram.com/artbylorirene" target="_blank">Instagram</a>
         <a href="https://facebook.com/Lorirene" target="_blank">Facebook</a>
@@ -79,11 +79,22 @@ const { title = "Lori Rene" } = Astro.props;
 
   nav .logo {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: var(--pink);
+    color: white;
+    background: var(--pink);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
   }
+
+  nav .logo:hover { opacity: 0.85; }
 
   nav ul {
     list-style: none;

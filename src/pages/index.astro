@@ -5,21 +5,23 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Home">
   <section class="hero">
     <div class="hero-text">
-      <h1>Lori Rene</h1>
+      <h1>Lori Renè</h1>
       <p class="tagline">Artist · Art Educator · Studio Teacher</p>
-      <p class="bio">With nine years teaching over 1,000 kids at Madison Station Elementary, Lori Rene brings creativity, warmth, and expertise to every canvas. Now opening her own studio and gallery, teaching summer art camp at Fat Cat Art Cafe in Flowood.</p>
+      <p class="bio">With nine years teaching over 1,000 kids at Madison Station Elementary, Lori Renè brings creativity, warmth, and expertise to every canvas. Now opening her own studio and gallery, teaching summer art camp at Fat Cat Art Cafe in Flowood.</p>
       <div class="hero-buttons">
         <a href="/classes" class="btn-primary">Summer Camp 2026</a>
         <a href="/gallery" class="btn-secondary">View Gallery</a>
       </div>
     </div>
     <div class="hero-image">
-        <img src="/images/lori-headshot.jpg" alt="Lori Rene" />
-      </div>
+      <img src="/images/lori-headshot.jpg" alt="Lori Renè" />
+      <div class="overlay-tagline">Create Each Day with Lori Renè</div>
+    </div>
+
   </section>
 
   <section class="about">
-    <img src="/images/Lori rene bio 2.jpeg" alt="Lori Rene artist bio" />
+    <img src="/images/Lori Rene artist bio.jpeg" alt="Lori Renè artist bio" />
   </section>
 
   <section class="what-i-do">
@@ -267,4 +269,36 @@ import Layout from '../layouts/Layout.astro';
     .hero-image { max-width: 100%; }
     .bio { max-width: 100%; }
   }
+
+  .hero-image {
+    flex: 1;
+    max-width: 420px;
+    position: relative;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    border: 4px solid var(--teal);
+    display: block;
+  }
+
+  .overlay-tagline {
+    position: absolute;
+    top: 1.5rem;
+    left: -1.5rem;
+    right: 1rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: white;
+    background: var(--pink);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0px var(--teal);
+    line-height: 1.3;
+  }
+
 </style>
