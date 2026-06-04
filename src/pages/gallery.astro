@@ -35,6 +35,11 @@ const images = [
     <p>Original artwork, paintings, sculptures, and classroom work by Lori Renè.</p>
   </div>
 
+  <div class="shop-banner">
+    <p>Original pieces available for purchase in the online shop.</p>
+    <a href="https://lori-renartworks-studios.square.site" class="shop-btn" target="_blank" rel="noopener noreferrer">Visit the Shop</a>
+  </div>
+
   <div class="gallery-grid">
     {images.map((img) => (
       <div class="gallery-item">
@@ -64,6 +69,46 @@ const images = [
   .gallery-header p {
     color: #555;
     font-size: 1rem;
+  }
+
+  .shop-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: #fff0f5;
+    border: 1px solid #f5c0d0;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 0 2rem 1.5rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shop-banner p {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .shop-btn {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.55rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .shop-btn:hover {
+    opacity: 0.85;
   }
 
   .gallery-grid {
