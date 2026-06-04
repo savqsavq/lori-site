@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Studio Shop">
+  <div class="shop-wrapper">
+    <iframe
+      src="https://lori-renartworks-studios.square.site/s/shop"
+      title="Lori Renè Art Shop"
+      allowfullscreen
+    ></iframe>
+  </div>
+</Layout>
+
+<style>
+  .shop-wrapper {
+    width: 100%;
+    height: calc(100vh - 74px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    display: block;
+  }
+</style>
