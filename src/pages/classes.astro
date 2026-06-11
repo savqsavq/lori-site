@@ -32,6 +32,9 @@ const classImages = [
           <div class="week" id="camp-week-1">Week 1 · June 8–12</div>
           <div class="week" id="camp-week-2">Week 2 · June 15–19</div>
           <div class="week" id="camp-week-3">Week 3 · June 22–26</div>
+          <div class="week" id="camp-week-4">Week 4 · July 6–10</div>
+          <div class="week" id="camp-week-5">Week 5 · July 13–17</div>
+          <div class="week" id="camp-week-6">Week 6 · July 20–24</div>
         </div>
         <a href="https://fatcatbooking.as.me/schedule/ecd40bb4/?categories[]=Lori%27s%20Art%20Camp" target="_blank" class="btn-primary" id="camp-register-btn">Register at FatCatArtCafe.com</a>
         <p class="phone">Questions? Call Lori at <a href="tel:6017912388">601-791-2388</a> or the studio at <a href="tel:6019926553">601-992-6553</a></p>
@@ -67,6 +70,9 @@ const classImages = [
     { id: 'camp-week-1', end: new Date('2026-06-12') },
     { id: 'camp-week-2', end: new Date('2026-06-19') },
     { id: 'camp-week-3', end: new Date('2026-06-26') },
+    { id: 'camp-week-4', end: new Date('2026-07-10') },
+    { id: 'camp-week-5', end: new Date('2026-07-17') },
+    { id: 'camp-week-6', end: new Date('2026-07-24') },
   ];
 
   for (const { id, end } of weeks) {
@@ -75,7 +81,7 @@ const classImages = [
     }
   }
 
-  const campEnd = new Date('2026-06-26');
+  const campEnd = new Date('2026-07-24');
   if (today > campEnd) {
     document.getElementById('camp-register-btn')?.remove();
   }
