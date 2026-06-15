@@ -14,7 +14,7 @@ const classImages = [
 
   <div class="content">
 
-    <section class="camp">
+    <section class="camp" id="camp-section">
       <div class="section-text">
         <h2>Summer Art Camp 2026</h2>
         <p>Lori Renè is teaching summer art camp at Fat Cat Art Cafe in Flowood, MS. Kids will draw, paint, and sculpt in a fun, creative environment.</p>
@@ -83,7 +83,7 @@ const classImages = [
 
   const campEnd = new Date('2026-07-24');
   if (today > campEnd) {
-    document.getElementById('camp-register-btn')?.remove();
+    document.getElementById('camp-section')?.remove();
   }
 </script>
 

@@ -48,21 +48,49 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="camp-banner">
+  <section class="camp-banner" id="camp-banner">
     <div class="camp-text">
       <h2>Summer Art Camp 2026</h2>
       <p>At Fat Cat Art Cafe · Flowood, MS</p>
       <ul>
         <li>Ages 7–9 · 9:00–11:00am</li>
         <li>Ages 10–12 · 12:00–2:00pm</li>
-        <li>Week 1: June 8–12</li>
-        <li>Week 2: June 15–19</li>
-        <li>Week 3: June 22–26</li>
+        <li id="camp-week-1">Week 1: June 8–12</li>
+        <li id="camp-week-2">Week 2: June 15–19</li>
+        <li id="camp-week-3">Week 3: June 22–26</li>
+        <li id="camp-week-4">Week 4: July 6–10</li>
+        <li id="camp-week-5">Week 5: July 13–17</li>
+        <li id="camp-week-6">Week 6: July 20–24</li>
       </ul>
       <a href="https://fatcatbooking.as.me/schedule/ecd40bb4/?categories[]=Lori%27s%20Art%20Camp" target="_blank" class="btn-primary">Register at FatCatArtCafe.com</a>
     </div>
   </section>
 </Layout>
+
+<script>
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const weeks = [
+    { id: 'camp-week-1', end: new Date('2026-06-12') },
+    { id: 'camp-week-2', end: new Date('2026-06-19') },
+    { id: 'camp-week-3', end: new Date('2026-06-26') },
+    { id: 'camp-week-4', end: new Date('2026-07-10') },
+    { id: 'camp-week-5', end: new Date('2026-07-17') },
+    { id: 'camp-week-6', end: new Date('2026-07-24') },
+  ];
+
+  for (const { id, end } of weeks) {
+    if (today > end) {
+      document.getElementById(id)?.remove();
+    }
+  }
+
+  const campEnd = new Date('2026-07-24');
+  if (today > campEnd) {
+    document.getElementById('camp-banner')?.remove();
+  }
+</script>
 
 <style>
   .hero {
