@@ -15,6 +15,9 @@ const classImages = [
   <div class="content">
 
     <section class="private">
+      <div class="private-flyer">
+        <img src="/images/new_flyer_mslori.jpg" alt="Lori Renè Studios flyer - Original Artwork, Art Classes, Private Lessons, Art Parties, Face Painting" loading="lazy" />
+      </div>
       <div class="private-text">
         <h2>Now Accepting Private Lesson Students</h2>
         <p>One-on-one instruction tailored to your goals, age, and skill level. Whether you're a complete beginner or looking to refine your technique, Lori works with students of all ages.</p>
@@ -31,9 +34,13 @@ const classImages = [
         <p>Contact Lori directly for more info or to schedule a private lesson.</p>
         <a href="/contact" class="btn-secondary">Get in touch</a>
       </div>
-      <div class="private-flyer">
-        <img src="/images/new_flyer_mslori.jpg" alt="Lori Renè Studios flyer - Original Artwork, Art Classes, Private Lessons, Art Parties, Face Painting" loading="lazy" />
-      </div>
+    </section>
+
+    <section class="workshops">
+      <h2>Group Workshops</h2>
+      <p>Lori also leads group art workshops for kids and adults, like the classes she ran this past summer. Sessions cover drawing, painting, and sculpture in a fun, social setting.</p>
+      <p>No upcoming workshops are scheduled right now, but more may be announced soon. Contact Lori to be notified when the next session opens up.</p>
+      <a href="/contact" class="btn-secondary">Get in touch</a>
     </section>
 
     <section class="class-gallery">
@@ -75,7 +82,9 @@ const classImages = [
     padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4rem;
+    text-align: center;
   }
 
   h2 {
@@ -111,18 +120,18 @@ const classImages = [
 
   .private {
     display: flex;
-    gap: 2.5rem;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
   }
 
   .private-text {
-    flex: 1;
-    min-width: 280px;
+    max-width: 560px;
   }
 
   .private-flyer {
     max-width: 220px;
+    margin-bottom: 1.5rem;
   }
 
   .private-flyer img {
@@ -133,9 +142,17 @@ const classImages = [
 
   .pricing {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin: 1.5rem 0;
     flex-wrap: wrap;
+  }
+
+  .workshops {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 560px;
   }
 
   .price-item {
@@ -158,15 +175,6 @@ const classImages = [
   .price-label {
     font-size: 0.85rem;
     opacity: 0.9;
-  }
-
-  @media (max-width: 640px) {
-    .private {
-      flex-direction: column-reverse;
-    }
-    .private-flyer {
-      max-width: 200px;
-    }
   }
 
   .class-grid {
