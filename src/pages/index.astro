@@ -13,9 +13,14 @@ import Layout from '../layouts/Layout.astro';
         <a href="/shop" class="btn-secondary">Studio Shop</a>
       </div>
     </div>
-    <div class="hero-image">
-      <img src="/images/lori-headshot.jpg" alt="Lori Renè" />
-      <div class="overlay-tagline">Create Each Day with Lori Renè</div>
+    <div class="hero-images">
+      <div class="hero-image">
+        <img src="/images/lori-headshot.jpg" alt="Lori Renè" />
+        <div class="overlay-tagline">Create Each Day with Lori Renè</div>
+      </div>
+      <div class="hero-flyer">
+        <img src="/images/new_flyer_mslori.jpg" alt="Lori Renè Studios flyer - Original Artwork, Art Classes, Private Lessons, Art Parties, Face Painting" />
+      </div>
     </div>
 
   </section>
@@ -48,9 +53,6 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <section class="private-banner">
-    <div class="private-flyer">
-      <img src="/images/new_flyer_mslori.jpg" alt="Lori Renè Studios flyer - Original Artwork, Art Classes, Private Lessons, Art Parties, Face Painting" loading="lazy" />
-    </div>
     <div class="private-text">
       <h2>Now Accepting Private Lesson Students</h2>
       <p>One-on-one art instruction with Lori Renè — $65/hour or a 4-pack for $220.</p>
@@ -58,8 +60,6 @@ import Layout from '../layouts/Layout.astro';
       <a href="/classes" class="btn-primary">Learn More</a>
     </div>
   </section>
-
-
 </Layout>
 
 <style>
@@ -106,9 +106,18 @@ import Layout from '../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 
+  .hero-images {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 520px;
+  }
+
   .hero-image {
     flex: 1;
     max-width: 420px;
+    position: relative;
   }
 
   .hero-image img {
@@ -117,6 +126,19 @@ import Layout from '../layouts/Layout.astro';
     object-fit: cover;
     aspect-ratio: 4/5;
     border: 4px solid var(--teal);
+    display: block;
+  }
+
+  .hero-flyer {
+    flex-shrink: 0;
+    max-width: 130px;
+  }
+
+  .hero-flyer img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    display: block;
   }
 
   .about {
@@ -219,29 +241,15 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .private-banner {
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 4rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-
-  .private-flyer {
-    max-width: 240px;
-    flex-shrink: 0;
-  }
-
-  .private-flyer img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    text-align: center;
   }
 
   .private-text {
-    max-width: 420px;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .private-text h2 {
@@ -267,23 +275,9 @@ import Layout from '../layouts/Layout.astro';
 
     .hero-text h1 { font-size: 2.5rem; }
     .hero-buttons { justify-content: center; }
-    .hero-image { max-width: 100%; }
+    .hero-images { max-width: 100%; justify-content: center; }
+    .hero-flyer { max-width: 100px; }
     .bio { max-width: 100%; }
-  }
-
-  .hero-image {
-    flex: 1;
-    max-width: 420px;
-    position: relative;
-  }
-
-  .hero-image img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    aspect-ratio: 4/5;
-    border: 4px solid var(--teal);
-    display: block;
   }
 
   .overlay-tagline {
