@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-text">
       <h1>Lori Renè</h1>
       <p class="tagline">Artist · Art Educator · Studio Teacher</p>
-      <p class="bio">With nine years teaching over 1,000 kids at Madison Station Elementary, Lori Renè brings creativity, warmth, and expertise to every canvas. Now opening her own studio and gallery, teaching summer art camp at Fat Cat Art Cafe in Flowood.</p>
+      <p class="bio">With nine years teaching over 1,000 kids at Madison Station Elementary, Lori Renè brings creativity, warmth, and expertise to every canvas. Now opening her own studio and gallery, offering art classes, private lessons, and parties.</p>
       <div class="hero-buttons">
         <a href="/gallery" class="btn-secondary">View Gallery</a>
         <a href="/shop" class="btn-secondary">Studio Shop</a>
@@ -47,49 +47,20 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="camp-banner" id="camp-banner">
-    <div class="camp-text">
-      <h2>Summer Art Camp 2026</h2>
-      <p>At Fat Cat Art Cafe · Flowood, MS</p>
-      <ul>
-        <li>Ages 7–9 · 9:00–11:00am</li>
-        <li>Ages 10–12 · 12:00–2:00pm</li>
-        <li id="camp-week-1">Week 1: June 8–12</li>
-        <li id="camp-week-2">Week 2: June 15–19</li>
-        <li id="camp-week-3">Week 3: June 22–26</li>
-        <li id="camp-week-4">Week 4: July 6–10</li>
-        <li id="camp-week-5">Week 5: July 13–17</li>
-        <li id="camp-week-6">Week 6: July 20–24</li>
-      </ul>
-      <a href="https://fatcatbooking.as.me/schedule/ecd40bb4/?categories[]=Lori%27s%20Art%20Camp" target="_blank" class="btn-primary">Register at FatCatArtCafe.com</a>
+  <section class="private-banner">
+    <div class="private-flyer">
+      <img src="/images/new_flyer_mslori.jpg" alt="Lori Renè Studios flyer - Original Artwork, Art Classes, Private Lessons, Art Parties, Face Painting" loading="lazy" />
+    </div>
+    <div class="private-text">
+      <h2>Now Accepting Private Lesson Students</h2>
+      <p>One-on-one art instruction with Lori Renè — $65/hour or a 4-pack for $220.</p>
+      <p>Contact Lori for more info or to schedule a lesson.</p>
+      <a href="/classes" class="btn-primary">Learn More</a>
     </div>
   </section>
+
+
 </Layout>
-
-<script>
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const weeks = [
-    { id: 'camp-week-1', end: new Date('2026-06-12') },
-    { id: 'camp-week-2', end: new Date('2026-06-19') },
-    { id: 'camp-week-3', end: new Date('2026-06-26') },
-    { id: 'camp-week-4', end: new Date('2026-07-10') },
-    { id: 'camp-week-5', end: new Date('2026-07-17') },
-    { id: 'camp-week-6', end: new Date('2026-07-24') },
-  ];
-
-  for (const { id, end } of weeks) {
-    if (today > end) {
-      document.getElementById(id)?.remove();
-    }
-  }
-
-  const campEnd = new Date('2026-07-24');
-  if (today > campEnd) {
-    document.getElementById('camp-banner')?.remove();
-  }
-</script>
 
 <style>
   .hero {
@@ -247,42 +218,44 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.9rem;
   }
 
-  .camp-banner {
-    background: var(--teal);
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-
-  .camp-text {
-    max-width: 600px;
+  .private-banner {
+    max-width: 1000px;
     margin: 0 auto;
-  }
-
-  .camp-banner h2 {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .camp-banner p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-  }
-
-  .camp-banner ul {
-    list-style: none;
-    margin-bottom: 2rem;
+    padding: 4rem 2rem;
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
   }
 
-  .camp-banner .btn-primary {
-    background: var(--pink);
-    display: inline-block;
+  .private-flyer {
+    max-width: 240px;
+    flex-shrink: 0;
+  }
+
+  .private-flyer img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+
+  .private-text {
+    max-width: 420px;
+  }
+
+  .private-text h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--pink);
+    margin-bottom: 0.75rem;
+  }
+
+  .private-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 768px) {

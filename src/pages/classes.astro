@@ -14,38 +14,26 @@ const classImages = [
 
   <div class="content">
 
-    <section class="camp" id="camp-section">
-      <div class="section-text">
-        <h2>Summer Art Camp 2026</h2>
-        <p>Lori Renè is teaching summer art camp at Fat Cat Art Cafe in Flowood, MS. Kids will draw, paint, and sculpt in a fun, creative environment.</p>
-        <div class="schedule">
-          <div class="age-group">
-            <span class="age-label">Ages 7–9</span>
-            <span>9:00am – 11:00am</span>
-          </div>
-          <div class="age-group">
-            <span class="age-label">Ages 10–12</span>
-            <span>12:00pm – 2:00pm</span>
-          </div>
-        </div>
-        <div class="weeks">
-          <div class="week" id="camp-week-1">Week 1 · June 8–12</div>
-          <div class="week" id="camp-week-2">Week 2 · June 15–19</div>
-          <div class="week" id="camp-week-3">Week 3 · June 22–26</div>
-          <div class="week" id="camp-week-4">Week 4 · July 6–10</div>
-          <div class="week" id="camp-week-5">Week 5 · July 13–17</div>
-          <div class="week" id="camp-week-6">Week 6 · July 20–24</div>
-        </div>
-        <a href="https://fatcatbooking.as.me/schedule/ecd40bb4/?categories[]=Lori%27s%20Art%20Camp" target="_blank" class="btn-primary" id="camp-register-btn">Register at FatCatArtCafe.com</a>
-        <p class="phone">Questions? Call Lori at <a href="tel:6017912388">601-791-2388</a> or the studio at <a href="tel:6019926553">601-992-6553</a></p>
-      </div>
-    </section>
-
     <section class="private">
-      <h2>Private Lessons</h2>
-      <p>One-on-one instruction tailored to your goals, age, and skill level. Whether you're a complete beginner or looking to refine your technique, Lori works with students of all ages.</p>
-      <p>Contact Lori directly to schedule a private lesson.</p>
-      <a href="/contact" class="btn-secondary">Get in touch</a>
+      <div class="private-text">
+        <h2>Now Accepting Private Lesson Students</h2>
+        <p>One-on-one instruction tailored to your goals, age, and skill level. Whether you're a complete beginner or looking to refine your technique, Lori works with students of all ages.</p>
+        <div class="pricing">
+          <div class="price-item">
+            <span class="price">$65</span>
+            <span class="price-label">per hour</span>
+          </div>
+          <div class="price-item">
+            <span class="price">$220</span>
+            <span class="price-label">4-pack</span>
+          </div>
+        </div>
+        <p>Contact Lori directly for more info or to schedule a private lesson.</p>
+        <a href="/contact" class="btn-secondary">Get in touch</a>
+      </div>
+      <div class="private-flyer">
+        <img src="/images/new_flyer_mslori.jpg" alt="Lori Renè Studios flyer - Original Artwork, Art Classes, Private Lessons, Art Parties, Face Painting" loading="lazy" />
+      </div>
     </section>
 
     <section class="class-gallery">
@@ -61,31 +49,6 @@ const classImages = [
 
   </div>
 </Layout>
-
-<script>
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const weeks = [
-    { id: 'camp-week-1', end: new Date('2026-06-12') },
-    { id: 'camp-week-2', end: new Date('2026-06-19') },
-    { id: 'camp-week-3', end: new Date('2026-06-26') },
-    { id: 'camp-week-4', end: new Date('2026-07-10') },
-    { id: 'camp-week-5', end: new Date('2026-07-17') },
-    { id: 'camp-week-6', end: new Date('2026-07-24') },
-  ];
-
-  for (const { id, end } of weeks) {
-    if (today > end) {
-      document.getElementById(id)?.remove();
-    }
-  }
-
-  const campEnd = new Date('2026-07-24');
-  if (today > campEnd) {
-    document.getElementById('camp-section')?.remove();
-  }
-</script>
 
 <style>
   .page-header {
@@ -128,70 +91,6 @@ const classImages = [
     margin-bottom: 1rem;
   }
 
-  .schedule {
-    display: flex;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
-  }
-
-  .age-group {
-    background: var(--teal);
-    color: white;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .age-label {
-    font-weight: 500;
-    font-size: 1rem;
-  }
-
-  .weeks {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-
-  .week {
-    background: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    color: #333;
-  }
-
-  .phone {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-
-  .phone a {
-    color: var(--teal);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--pink);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: opacity 0.2s;
-  }
-
-  .btn-primary:hover { opacity: 0.85; }
-
   .btn-secondary {
     display: inline-block;
     background: transparent;
@@ -208,6 +107,66 @@ const classImages = [
   .btn-secondary:hover {
     background: var(--pink);
     color: white;
+  }
+
+  .private {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .private-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .private-flyer {
+    max-width: 220px;
+  }
+
+  .private-flyer img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+
+  .pricing {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+
+  .price-item {
+    background: var(--pink);
+    color: white;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .price {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .price-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 640px) {
+    .private {
+      flex-direction: column-reverse;
+    }
+    .private-flyer {
+      max-width: 200px;
+    }
   }
 
   .class-grid {
