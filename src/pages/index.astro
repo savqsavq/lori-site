@@ -118,7 +118,6 @@ import Layout from '../layouts/Layout.astro';
     flex: 1;
     max-width: 420px;
     position: relative;
-    z-index: 1;
   }
 
   .hero-image img {
@@ -133,8 +132,10 @@ import Layout from '../layouts/Layout.astro';
   .hero-flyer {
     flex-shrink: 0;
     max-width: 140px;
-    margin-left: -1.5rem;
+    margin-left: -3.5rem;
     transform: rotate(4deg);
+    position: relative;
+    z-index: 1;
   }
 
   .hero-flyer img {
@@ -280,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
     .hero-text h1 { font-size: 2.5rem; }
     .hero-buttons { justify-content: center; }
     .hero-images { max-width: 100%; justify-content: center; }
-    .hero-flyer { max-width: 90px; margin-left: -1rem; }
+    .hero-flyer { max-width: 90px; margin-left: -2.5rem; }
     .bio { max-width: 100%; }
   }
 
