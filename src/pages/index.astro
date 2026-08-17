@@ -52,15 +52,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
-  <section class="private-banner">
-    <div class="private-text">
-      <h2>Now Accepting Private Lesson Students</h2>
-      <p>One-on-one art instruction with Lori Renè — $65/hour or a 4-pack for $220.</p>
-      <p>Contact Lori for more info or to schedule a lesson.</p>
-      <a href="/classes" class="btn-primary">Learn More</a>
-    </div>
-  </section>
 </Layout>
 
 <style>
@@ -158,19 +149,6 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 12px;
   }
 
-  .btn-primary {
-    background: var(--pink);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: opacity 0.2s;
-  }
-
-  .btn-primary:hover { opacity: 0.85; }
-
   .btn-secondary {
     background: transparent;
     color: var(--pink);
@@ -244,32 +222,6 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 500;
     text-decoration: none;
     font-size: 0.9rem;
-  }
-
-  .private-banner {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-
-  .private-text {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .private-text h2 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    color: var(--pink);
-    margin-bottom: 0.75rem;
-  }
-
-  .private-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 1rem;
   }
 
   @media (max-width: 768px) {
