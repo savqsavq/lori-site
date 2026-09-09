@@ -27,7 +27,7 @@ const { title = "Lori Renè" } = Astro.props;
   </head>
   <body>
     <nav>
-      <a href="/" class="logo">LR</a>
+      <a href="/" class="logo"><img src="/lori_logo.png" alt="Lori Renè" /></a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -101,20 +101,15 @@ const { title = "Lori Renè" } = Astro.props;
   }
 
   nav .logo {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    background: var(--pink);
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    letter-spacing: 0.05em;
     transition: opacity 0.2s;
+  }
+
+  nav .logo img {
+    height: 48px;
+    width: auto;
+    display: block;
   }
 
   nav .logo:hover { opacity: 0.85; }
