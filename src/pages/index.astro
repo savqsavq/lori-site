@@ -12,6 +12,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="/gallery" class="btn-secondary">Photo Gallery</a>
         <a href="/shop" class="btn-secondary">Original Artwork</a>
         <a href="/classes" class="btn-secondary">Private Lessons</a>
+        <a href="/parties#events-section" class="btn-festival">🎪 Upcoming Festivals</a>
       </div>
     </div>
     <div class="hero-images">
@@ -164,6 +165,28 @@ import Layout from '../layouts/Layout.astro';
   .btn-secondary:hover {
     background: var(--pink);
     color: white;
+  }
+
+  .btn-festival {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--teal);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0 var(--pink);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-festival:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 4px 4px 0 var(--pink);
   }
 
   .what-i-do {

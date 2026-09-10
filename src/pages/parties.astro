@@ -12,40 +12,40 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="events" id="events-section">
       <h2>Catch Me at a Festival!</h2>
-      <p>I'll be out and about this fall — come find my table and say hi!</p>
+      <p>I'll be out and about this fall. Come find my table and say hi!</p>
       <div class="event-list">
         <div class="event" data-date="2026-09-19">
           <div class="event-date"><span class="month">Sep</span><span class="day">19</span></div>
           <div class="event-info">
-            <h3>Let's Go Fly a Kite</h3>
+            <h3><a href="https://www.thedistrictateastover.com/upcoming-events" target="_blank" rel="noopener">Let's Go Fly a Kite</a></h3>
             <p>The District at Eastover · Face painting</p>
           </div>
         </div>
         <div class="event" data-date="2026-09-26">
           <div class="event-date"><span class="month">Sep</span><span class="day">26</span></div>
           <div class="event-info">
-            <h3>WellsFest</h3>
+            <h3><a href="https://www.wellschurch.org/wellsfest" target="_blank" rel="noopener">WellsFest</a></h3>
             <p>Mississippi Agriculture & Forestry Museum, Jackson</p>
           </div>
         </div>
         <div class="event" data-date="2026-10-03">
           <div class="event-date"><span class="month">Oct</span><span class="day">3</span></div>
           <div class="event-info">
-            <h3>Day in the Country</h3>
+            <h3><a href="https://chapelofthecrossms.org/day-in-the-country" target="_blank" rel="noopener">Day in the Country</a></h3>
             <p>Chapel of the Cross, Madison</p>
           </div>
         </div>
         <div class="event" data-date="2026-10-10">
           <div class="event-date"><span class="month">Oct</span><span class="day">10</span></div>
           <div class="event-info">
-            <h3>The Church at Shiloh</h3>
+            <h3><a href="https://www.thechurchatshiloh.com/" target="_blank" rel="noopener">The Church at Shiloh</a></h3>
             <p>Pelahatchie</p>
           </div>
         </div>
         <div class="event" data-date="2026-10-25">
           <div class="event-date"><span class="month">Oct</span><span class="day">25</span></div>
           <div class="event-info">
-            <h3>Germanfest</h3>
+            <h3><a href="https://www.instagram.com/gluckstadt_germanfest/" target="_blank" rel="noopener">Germanfest</a></h3>
             <p>St. Joseph Catholic Church, Gluckstadt</p>
           </div>
         </div>
@@ -89,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="birthday">
       <div class="text">
         <h2>Birthday Parties</h2>
-        <p>Lori brings the art studio to your party. Kids get to create their own masterpiece in a fun, guided setting — no experience needed, just imagination. Perfect for ages 5 and up.</p>
+        <p>Lori brings the art studio to your party. Kids get to create their own masterpiece in a fun, guided setting. No experience needed, just imagination. Perfect for ages 5 and up.</p>
         <p>Contact Lori to discuss themes, group size, location, and pricing.</p>
       </div>
     </section>
@@ -99,7 +99,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="text">
           <h2>Face Painting</h2>
           <p>Add some magic to your event with professional face painting by Lori Renè. Great for birthday parties, school events, festivals, and more.</p>
-          <p>Available for private bookings — reach out to check availability.</p>
+          <p>Available for private bookings. Reach out to check availability.</p>
         </div>
         <div class="face-img">
           <img src="/images/parties-events/facepainting.jpg " alt="Face painting by Lori Renè" />
@@ -207,6 +207,17 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.15rem;
     color: var(--dark);
     margin-bottom: 0.15rem;
+  }
+
+  .event-info h3 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid var(--teal);
+  }
+
+  .event-info h3 a:hover {
+    color: var(--pink);
+    border-bottom-color: var(--pink);
   }
 
   .event-info p {
