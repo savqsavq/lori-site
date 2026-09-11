@@ -168,9 +168,12 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .btn-festival {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.4rem;
+    flex-basis: 100%;
+    margin-top: 0.5rem;
     background: var(--teal);
     color: white;
     padding: 0.75rem 1.5rem;
@@ -179,7 +182,7 @@ import Layout from '../layouts/Layout.astro';
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
     box-shadow: 3px 3px 0 var(--pink);
     transition: transform 0.2s, box-shadow 0.2s;
   }
@@ -259,6 +262,17 @@ import Layout from '../layouts/Layout.astro';
     .hero-images { max-width: 100%; justify-content: center; }
     .hero-flyer { max-width: 90px; margin-left: -2.5rem; }
     .bio { max-width: 100%; }
+  }
+
+  @media (min-width: 769px) {
+    .hero-buttons {
+      width: fit-content;
+      justify-content: center;
+    }
+
+    .btn-festival {
+      flex-basis: auto;
+    }
   }
 
   .overlay-tagline {
